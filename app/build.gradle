@@ -7,10 +7,10 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
     signingConfigs {
         config {
-            keyAlias 'key'
-            keyPassword 'ivanbon13072001'
-            storeFile file('/home/ivan/AndroidStudioProjects/Test2/keys/key.jks')
-            storePassword 'ivanbon13072001'
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile rootProject.file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
     }
     compileSdkVersion 28
